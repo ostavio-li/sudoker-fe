@@ -5,8 +5,6 @@
       <nav class="navbar navbar-expand-lg navbar-light" style="height: 100%">
         <div class="container-fluid">
           <a class="navbar-brand" target="_self" href="/" style="user-select:none;">
-<!--            <img src="/bootstrap-logo.svg" class="d-inline-block align-text-top" alt="" width="30" height="24">-->
-<!--            <img id="icon" alt="数独客" src="/sudoku.png" />-->
             &nbsp;<strong style="font-size: larger;">Sudoker</strong>
           </a>
 
@@ -14,15 +12,15 @@
 
             <el-dropdown placement="bottom-end">
 
-              <el-avatar class="ava" size="medium"
+              <el-avatar size="medium" class="avat"
                          src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"/>
 
               <template #dropdown>
                 <el-dropdown-menu>
                   <div style="margin: 10% 10%;font-family: 微软雅黑, sans-serif;font-size: medium">{{user}}</div>
                   <el-divider content-position="center"></el-divider>
-                  <el-dropdown-item icon="el-icon-bangzhu" style="user-select: none;">帮助中心</el-dropdown-item>
-                  <el-dropdown-item icon="el-icon-close" style="color: red;user-select: none;" @click.native="logout">
+                  <el-dropdown-item :icon="Help" style="user-select: none;">帮助中心</el-dropdown-item>
+                  <el-dropdown-item :icon="Close" style="color: red;user-select: none;" @click="logout">
                     退出登录
                   </el-dropdown-item>
                 </el-dropdown-menu>
@@ -44,18 +42,14 @@
         >
 
           <el-menu-item index="/adm/sudoku">
-            <i class="el-icon-document"></i>
+<!--            <i class="el-icon-document"></i>-->
+            <el-icon><document /></el-icon>
             <span slot="title">数独</span>
           </el-menu-item>
 
           <el-menu-item index="/adm/user">
-            <i class="el-icon-user-solid"></i>
+            <el-icon><avatar /></el-icon>
             <span slot="title">用户管理</span>
-          </el-menu-item>
-
-          <el-menu-item index="/adm/demo">
-            <i class="el-icon-document"></i>
-            <span slot="title">Demo</span>
           </el-menu-item>
 
         </el-menu>
@@ -74,7 +68,12 @@
 
 </template>
 
+<script setup>
+import {Help, Close} from "@element-plus/icons-vue";
+</script>
+
 <script>
+import {Document, Avatar} from "@element-plus/icons-vue";
 
 export default {
   name: "admin",
@@ -84,12 +83,25 @@ export default {
       place: 'bottom-end',
       activerouter: '/'
     }
+  },
+  methods: {
+    logout() {
+      console.log('%s 退出', this.user)
+    }
+  },
+  components: {
+    Document,
+    Avatar
   }
 }
 
 </script>
 
 <style scoped>
+
+.avat {
+  border: 1px solid burlywood;
+}
 
 ::selection {
   background-color: lightblue;

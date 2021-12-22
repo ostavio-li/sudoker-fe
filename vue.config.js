@@ -8,7 +8,9 @@ const conf = {
     productionSourceMap: false,
 
     // 开发服务器配置
-    devServer: {}
+    devServer: {
+        port: 80
+    }
 
 }
 

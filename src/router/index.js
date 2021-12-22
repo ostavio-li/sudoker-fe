@@ -4,6 +4,7 @@ import Sudoku from "../components/Sudoku.vue";
 import Demo from "../components/Demo.vue"
 import Home from "../components/home.vue"
 import Admin from "../components/admin.vue"
+import SudokuAdmin from "@/components/SudokuAdmin";
 
 // 静态路由配置
 
@@ -22,7 +23,7 @@ const routes = [
             },
             {
                 path: 'sudoku',
-                component: Sudoku
+                component: SudokuAdmin
             },
             {
                 path: 'user',

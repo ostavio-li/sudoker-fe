@@ -8,10 +8,12 @@
             class="button-shadow"
             type="success"
             title="提交"
+            :icon="Check"
             @click="check"
             circle>
-          <i class="el-icon-check" style="font-weight: bold;"></i>
+
         </el-button>
+
       </span>&nbsp;
 
       <el-button type="primary" style="margin: 5px auto;" class="button-shadow" @click="go">{{ status }}</el-button>
@@ -47,6 +49,10 @@
   </div>
 
 </template>
+
+<script setup>
+import {Check} from "@element-plus/icons-vue";
+</script>
 
 <script>
 // import request from "../api/client.js";
@@ -136,7 +142,9 @@ export default {
     // 窗口缩放事件
     window.onresize = function () {
       this.screenWidth = document.body.clientWidth
-      console.log(this.screenWidth)
+      if (this.screenWidth < 1200) {
+        console.log(this.screenWidth)
+      }
     }
   },
 
@@ -359,7 +367,7 @@ td {
   outline: none;
   /*width: 60px;*/
   width: 100%;
-  height: 100%;
+  height: 40px;
   line-height: 60px;
   font-size: 25px;
   text-align: center;
