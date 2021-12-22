@@ -16,18 +16,6 @@
     <el-row :gutter="0">
       <el-col :span="7">
 
-        <!--        <el-card :body-style="{marginLeft:'5px'}">-->
-        <!--          <template #header>-->
-        <!--            <div>-->
-        <!--              <span>Card name</span>-->
-        <!--              <el-button type="text">-->
-        <!--                Operation button-->
-        <!--              </el-button>-->
-        <!--            </div>-->
-        <!--          </template>-->
-        <!--          <div v-for="o in 4" :key="o">{{ 'List item ' + o }}</div>-->
-        <!--        </el-card>-->
-
       </el-col>
 
       <el-col :span="10">
@@ -80,10 +68,6 @@ export default {
   mounted() {
 
   }
-}
-
-function put() {
-  console.log('finish!')
 }
 
 function useCounter() {

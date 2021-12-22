@@ -5,6 +5,7 @@
       <nav class="navbar navbar-expand-lg navbar-light" style="height: 100%">
         <div class="container-fluid">
           <a class="navbar-brand" target="_self" href="/" style="user-select:none;">
+            <img src="/logo.svg" alt="数独客" title="数独客" style="line-height: 60px;vertical-align: center;margin-bottom: 2px;" width="40" height="40" />
             &nbsp;<strong style="font-size: larger;">Sudoker</strong>
           </a>
 
@@ -44,12 +45,17 @@
           <el-menu-item index="/adm/sudoku">
 <!--            <i class="el-icon-document"></i>-->
             <el-icon><document /></el-icon>
-            <span slot="title">数独</span>
+            <span slot="title">ctnt</span>
           </el-menu-item>
 
           <el-menu-item index="/adm/user">
             <el-icon><avatar /></el-icon>
             <span slot="title">用户管理</span>
+          </el-menu-item>
+
+          <el-menu-item index="/adm/login">
+            <el-icon><avatar /></el-icon>
+            <span slot="title">登录页面</span>
           </el-menu-item>
 
         </el-menu>
