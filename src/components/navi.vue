@@ -73,7 +73,7 @@
 
             </el-dropdown>
           </form>
-        <el-button v-if="!hasLogin" type="success" plain size="small" @click="this.hasLogin = true">登录</el-button>
+        <el-button v-if="!hasLogin" type="success" plain size="small" @click="this.$router.push('login')">登录</el-button>
       </span>
 
     </span>

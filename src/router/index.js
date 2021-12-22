@@ -22,6 +22,10 @@ const routes = [
             {
                 path: 'login',
                 component: Login
+            },
+            {
+                path: 'demo',
+                component: Demo
             }
         ]
     },
