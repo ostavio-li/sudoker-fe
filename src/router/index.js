@@ -6,13 +6,24 @@ import Home from "../components/home.vue"
 import Admin from "../components/admin.vue"
 import SudokuAdmin from "@/components/SudokuAdmin";
 import Login from "@/components/Login";
+import First from "@/components/First";
 
 // 静态路由配置
 
 const routes = [
     {
         path: '/',
-        component: Home
+        component: Home,
+        children: [
+            {
+                path: '/',
+                component: First
+            },
+            {
+                path: 'login',
+                component: Login
+            }
+        ]
     },
     {
         path: '/adm',
