@@ -7,6 +7,7 @@ import Admin from "../components/admin.vue"
 import SudokuAdmin from "@/components/SudokuAdmin";
 import Login from "@/components/Login";
 import First from "@/components/First";
+import Course from "@/components/Course";
 
 // 静态路由配置
 
@@ -26,6 +27,10 @@ const routes = [
             {
                 path: 'demo',
                 component: Demo
+            },
+            {
+                path: 'course',
+                component: Course
             }
         ]
     },

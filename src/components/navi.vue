@@ -37,14 +37,13 @@
             text-color="#505050"
             :ellipsis=false
             :router="true"
-            @select="handleSelect"
         >
           <el-menu-item index="/">首页</el-menu-item>
-          <el-menu-item index="login">教程</el-menu-item>
+          <el-menu-item index="/course">教程</el-menu-item>
           <el-menu-item index="3" disabled>比赛</el-menu-item>
           <el-menu-item index="4" disabled>下载</el-menu-item>
-          <el-menu-item index="5">商店</el-menu-item>
-          <el-menu-item index="6">论坛</el-menu-item>
+          <el-menu-item index="5" disabled>商店</el-menu-item>
+          <el-menu-item index="6" disabled>论坛</el-menu-item>
         </el-menu>
 
       </span>

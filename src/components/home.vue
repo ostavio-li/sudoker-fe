@@ -1,5 +1,6 @@
 <template>
 
+  <!-- 导航栏 -->
   <Navi class="h"/>
 
   <!-- Gitee 挂件 -->
@@ -10,32 +11,7 @@
 
   <!-- 占位 -->
   <div style="height: 60px;"/>
-
   <router-view/>
-
-<!--  <div style="width: 100%;margin: 0 auto;text-align: center;padding-top: 20px">-->
-
-<!--    <el-row :gutter="0">-->
-<!--      <el-col :span="7">-->
-
-<!--      </el-col>-->
-
-<!--      <el-col :span="10">-->
-<!--        <div style="margin: 0 auto;" class="sudoku-box">-->
-<!--          <el-card>-->
-<!--            <div style="text-align: left">每日一题</div>-->
-<!--            <Sudoku class="su" @finish="put"/>-->
-<!--          </el-card>-->
-
-<!--        </div>-->
-<!--      </el-col>-->
-<!--      &lt;!&ndash;      <el-col :span="6">&ndash;&gt;-->
-<!--      &lt;!&ndash;        c&ndash;&gt;-->
-<!--      &lt;!&ndash;      </el-col>&ndash;&gt;-->
-<!--    </el-row>-->
-
-
-<!--  </div>-->
   <el-backtop/>
 
 </template>
