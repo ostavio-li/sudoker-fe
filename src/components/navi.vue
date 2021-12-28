@@ -9,27 +9,6 @@
       <!-- 导航链接 -->
       <span style="margin-left: 2%;display: inline-block">
 
-<!--        <el-link :underline="false" type="info" style="margin-right: 1%">-->
-<!--                  教程-->
-<!--                </el-link>-->
-
-<!--                <el-link :underline="false" type="info" style="margin-right: 1%">-->
-<!--                  题库-->
-<!--                </el-link>-->
-
-<!--                <el-link :underline="false" type="info" style="margin-right: 1%">-->
-<!--                  商店-->
-<!--                </el-link>-->
-
-<!--                <el-link :underline="false" type="info" style="margin-right: 1%">-->
-<!--                  比赛-->
-<!--                </el-link>-->
-
-<!--                <el-link :underline="false" type="info" style="margin-right: 1%">-->
-<!--                  下载-->
-<!--                </el-link>-->
-
-
         <el-menu
             :default-active="$route.path"
             class="nav-link"
@@ -40,10 +19,10 @@
         >
           <el-menu-item index="/">首页</el-menu-item>
           <el-menu-item index="/course">教程</el-menu-item>
-          <el-menu-item index="3" disabled>比赛</el-menu-item>
-          <el-menu-item index="4" disabled>下载</el-menu-item>
-          <el-menu-item index="5" disabled>商店</el-menu-item>
-          <el-menu-item index="6" disabled>论坛</el-menu-item>
+          <el-menu-item index="3" disabled title="功能未上线">比赛</el-menu-item>
+          <el-menu-item index="4" disabled title="功能未上线">下载</el-menu-item>
+          <el-menu-item index="5" disabled title="功能未上线">商店</el-menu-item>
+          <el-menu-item index="6" disabled title="功能未上线">论坛</el-menu-item>
         </el-menu>
 
       </span>

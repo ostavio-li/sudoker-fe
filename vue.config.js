@@ -9,7 +9,10 @@ const conf = {
 
     // 开发服务器配置
     devServer: {
-        port: 80
+        port: 80,
+        devServer: {
+
+        }
     }
 
 }
