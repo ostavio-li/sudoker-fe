@@ -11,7 +11,7 @@
 
   <!-- 占位 -->
   <div style="height: 60px;"/>
-  <router-view/>
+  <router-view />
   <el-backtop/>
 
 </template>

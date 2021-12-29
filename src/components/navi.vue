@@ -43,7 +43,7 @@
                   <el-dropdown-item
                       :icon="Close"
                       style="color: red;user-select: none;"
-                      @click="this.hasLogin = false">
+                      @click="logout">
                     退出登录
                   </el-dropdown-item>
                 </el-dropdown-menu>
@@ -73,14 +73,27 @@ export default {
       user: '李健成',
       activeIndex: '1',
       // 是否登录
-      hasLogin: false,
       // 是否是管理员
       isAdmin: false
+    }
+  },
+  computed: {
+    hasLogin: function () {
+      return this.$store.state.loggedin
     }
   },
   methods: {
     toAdmin() {
       router.push('/adm/user')
+    },
+    logout() {
+      localStorage.removeItem("Authorization")
+      this.$store.commit('logout')
+    }
+  },
+  mounted() {
+    if (localStorage.getItem('Authorization') != null) {
+      this.$store.commit('login')
     }
   }
 }
