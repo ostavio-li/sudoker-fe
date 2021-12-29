@@ -12,7 +12,10 @@ request.defaults.withCredentials = false
 
 request.interceptors.request.use(
     config => {
-        config.headers['Authorization'] = localStorage.getItem("Authorization")
+        let token = localStorage.getItem("Authorization")
+        if (token != null) {
+            config.headers['Authorization'] = token
+        }
         return config
     }, error => {
         return Promise.reject(error)
