@@ -1,5 +1,4 @@
 import axios from "axios";
-import {ElMessage} from "element-plus";
 
 const request = axios.create({
     baseURL: '/',
@@ -13,6 +12,7 @@ request.defaults.withCredentials = false
 
 request.interceptors.request.use(
     config => {
+        config.headers['Authorization'] = localStorage.getItem("Authorization")
         return config
     }, error => {
         return Promise.reject(error)
