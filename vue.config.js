@@ -10,8 +10,11 @@ const conf = {
     // 开发服务器配置
     devServer: {
         port: 80,
-        devServer: {
-
+        proxy: {
+            '/api': {
+                target: 'http://localhost:8050',
+                secure: false
+            }
         }
     }
 
