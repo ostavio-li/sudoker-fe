@@ -89,6 +89,7 @@ export default {
     logout() {
       localStorage.removeItem("Authorization")
       this.$store.commit('logout')
+      this.$router.go(0)
     }
   },
   mounted() {

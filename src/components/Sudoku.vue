@@ -55,7 +55,7 @@ import {Check} from "@element-plus/icons-vue";
 </script>
 
 <script>
-// import request from "../api/client.js";
+import client from "@/api/client";
 import {onMounted, ref} from "vue";
 
 export default {
@@ -128,16 +128,16 @@ export default {
   },
 
   mounted() {
-    // request.show().then(resp => {
-    //   this.data = resp.data.data.data
-    //   for (let row = 0; row < this.data.length; row++) {
-    //     for (let col = 0; col < this.data[row].length; col++) {
-    //       if (this.data[row][col] !== 0) {
-    //         this.uneditable[row][col] = 1
-    //       }
-    //     }
-    //   }
-    // })
+    client.dailySudoku().then(resp => {
+      this.data = resp.data.data.data
+      for (let row = 0; row < this.data.length; row++) {
+        for (let col = 0; col < this.data[row].length; col++) {
+          if (this.data[row][col] !== 0) {
+            this.uneditable[row][col] = 1
+          }
+        }
+      }
+    })
 
     // 窗口缩放事件
     window.onresize = function () {

@@ -16,6 +16,13 @@ export default {
                 password: password
             }
         })
+    },
+
+    dailySudoku() {
+        return request({
+            method: 'get',
+            url: BASE_URL + '/sudoku'
+        })
     }
 
 }

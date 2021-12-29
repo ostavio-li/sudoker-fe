@@ -1,4 +1,5 @@
 import axios from "axios";
+import {ElMessage} from "element-plus";
 
 const request = axios.create({
     baseURL: '/',
@@ -26,6 +27,7 @@ request.interceptors.response.use(
     response => {
         return response
     }, error => {
+        ElMessage.warning('服务器错误')
         return Promise.reject(error)
     }
 )
