@@ -29,7 +29,7 @@
           <el-link style="float: right;font-size: 5px" type="info" @click="forget">忘记密码</el-link>
         </div>
         <div>
-          <el-button @click="login(user.username, user.password)" :disabled="!canLogin">登录 / 注册</el-button>
+          <el-button @click="login(user.username, user.password)" :loading="logining" :disabled="!canLogin">登录 / 注册</el-button>
         </div>
       </div>
 
@@ -54,7 +54,8 @@ export default {
         username: '',
         password: '',
         captcha: ''
-      }
+      },
+      logining: false
     }
   },
   computed: {
@@ -63,6 +64,9 @@ export default {
     }
   },
   mounted() {
+    if (this.$store.state.loggedin) {
+      this.$router.push('/')
+    }
     // var c = svgCaptcha.create()
     // console.log(c)
     // window.addEventListener('keydown', this.keyDown)
@@ -95,13 +99,16 @@ export default {
       })
     },
     login(username, password) {
-      console.log('Signed in')
+      this.logining = true
       client.login(username, password).then(resp => {
+        this.logining = false
         if (resp.data.code === '500') {
+
           ElMessage({
             type: 'error',
             message: resp.data.message
           })
+
         } else {
           const token = resp.data.data;
           localStorage.setItem('Authorization', token)
@@ -110,8 +117,12 @@ export default {
             message: '登录成功'
           })
           this.$store.commit('login')
+          this.logining = false
           this.$router.push('/')
         }
+
+      }).catch(error => {
+        this.logining = false
       })
     },
     getCaptcha() {

@@ -128,6 +128,8 @@ export default {
   },
 
   mounted() {
+
+
     client.dailySudoku().then(resp => {
       this.data = resp.data.data.data
       for (let row = 0; row < this.data.length; row++) {
@@ -139,13 +141,7 @@ export default {
       }
     })
 
-    // 窗口缩放事件
-    window.onresize = function () {
-      this.screenWidth = document.body.clientWidth
-      if (this.screenWidth < 1200) {
-        console.log(this.screenWidth)
-      }
-    }
+
   },
 
   methods: {
@@ -264,33 +260,36 @@ export default {
 
     // 检查
     check() {
-      let checked = true
-      for (let row = 0; row < this.data.length; row++) {
-        // 判断 行 / 列 重复
-        if (this.isRowRepeat(row) || this.isColRepeat(row)) {
-          return false
-        }
-        // 判断 宫 重复
-        if (row % 3 === 0) {
-          for (let col = 0; col < this.data[row].length; col++) {
-            if (col % 3 === 0) {
-              // 获取 宫
-              let palace = []
-              for (let i = 0; i < 3; i++) {
-                for (let j = 0; j < 3; j++) {
-                  palace.push(this.data[row + i][col + j])
-                }
-              }
-              if (this.isRowRepeat(palace)) {
-                checked = false
-              }
-            }
-          }
-        }
-      }
-
-      // 触发 完成 事件
-      this.$emit('finish')
+      // let checked = true
+      // for (let row = 0; row < this.data.length; row++) {
+      //   // 判断 行 / 列 重复
+      //   if (this.isRowRepeat(row) || this.isColRepeat(row)) {
+      //     return false
+      //   }
+      //   // 判断 宫 重复
+      //   if (row % 3 === 0) {
+      //     for (let col = 0; col < this.data[row].length; col++) {
+      //       if (col % 3 === 0) {
+      //         // 获取 宫
+      //         let palace = []
+      //         for (let i = 0; i < 3; i++) {
+      //           for (let j = 0; j < 3; j++) {
+      //             palace.push(this.data[row + i][col + j])
+      //           }
+      //         }
+      //         if (this.isRowRepeat(palace)) {
+      //           checked = false
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
+      //
+      // // 触发 完成 事件
+      // this.$emit('finish')
+      client.download().then(resp => {
+        console.log(resp.data)
+      })
     },
 
     isRowRepeat(row) {

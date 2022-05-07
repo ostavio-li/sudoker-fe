@@ -1,3 +1,6 @@
+const path = require('path')
+const CompressionPlugin = require('compression-webpack-plugin')
+
 // Config
 const conf = {
 
@@ -15,6 +18,20 @@ const conf = {
                 target: 'http://localhost:8050',
                 secure: false
             }
+        }
+    },
+
+    chainWebpack: (config) => {
+        if (process.env.NODE_ENV === 'production') {
+            config.plugin('compressionPlugin')
+                .use(new CompressionPlugin({
+                    // filename: '[path][base].gz[query]',
+                    algorithm: 'gzip',
+                    test: /\.js$|\.html$|\.css/, // 匹配文件名
+                    threshold: 10240, // 超过 10k 则压缩
+                    minRatio: 0.8,
+                    deleteOriginalAssets: true
+                }))
         }
     }
 

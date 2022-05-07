@@ -1,7 +1,10 @@
 <template>
-  <div id="app">
+  <div v-show="!mobile" id="app">
     <router-view />
   </div>
+
+
+
 </template>
 
 <script>
@@ -9,6 +12,19 @@
 export default {
   name: 'App',
   components: {
+  },
+  data() {
+    return {
+
+    }
+  },
+  mounted() {
+
+  },
+  methods: {
+    isMobile() {
+
+    }
   }
 }
 </script>

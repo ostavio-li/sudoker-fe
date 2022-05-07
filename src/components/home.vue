@@ -4,15 +4,20 @@
   <Navi class="h"/>
 
   <!-- Gitee 挂件 -->
-  <a href='https://gitee.com/carlos_li/sudoker-fe' target="_blank" title="Fork me on Gitee"
-     style="position: fixed;z-index: 1;right: 1%">
-    <img src='https://gitee.com/carlos_li/sudoker-fe/widgets/widget_5.svg' alt='Fork me on Gitee'/>
-  </a>
+<!--  <a href='https://gitee.com/carlos_li/sudoker-fe' target="_blank" title="Fork me on Gitee"-->
+<!--     style="position: fixed;z-index: 1;right: 1%">-->
+<!--    <img src='https://gitee.com/carlos_li/sudoker-fe/widgets/widget_5.svg' alt='Fork me on Gitee'/>-->
+<!--  </a>-->
 
   <!-- 占位 -->
   <div style="height: 60px;"/>
-  <router-view />
-  <el-backtop/>
+
+  <div v-show="mobile" class="tip">
+    😝 暂未适配移动端，建议在PC端访问
+  </div>
+
+  <router-view v-show="!mobile"/>
+  <el-backtop v-show="!mobile"/>
 
 </template>
 
@@ -38,13 +43,20 @@ export default {
     // return {counter, doubleCounter, msg, desc, dc}
   },
   components: {Navi, ModelButton, Sudoku},
+  data() {
+    return {
+      mobile: true
+    }
+  },
   methods: {
     put() {
       console.log('finish!')
     }
   },
   mounted() {
-
+    if(/phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone/i.test(navigator.userAgent) === false) {
+      this.mobile = false
+    }
   }
 }
 
@@ -115,6 +127,16 @@ html, body {
 
 .box-card {
   width: 480px;
+}
+
+.tip {
+  border: 0 solid lightslategrey;
+  border-radius: 4px;
+  width: fit-content;
+  padding: 5px;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
 }
 
 </style>

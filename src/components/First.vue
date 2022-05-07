@@ -7,13 +7,14 @@
       </el-col>
 
       <el-col :span="10">
-        <div style="margin: 0 auto;" class="sudoku-box">
-          <el-card>
-            <div style="text-align: left">每日一题</div>
-            <Sudoku class="su" @finish="put"/>
-          </el-card>
+        <!-- 这里是数独组件，目前无法响应窗口缩放 -->
+<!--        <div style="margin: 0 auto;" class="sudoku-box">-->
+<!--          <el-card>-->
+<!--            <div style="text-align: left">每日一题</div>-->
+<!--            <Sudoku class="su" @finish="put"/>-->
+<!--          </el-card>-->
 
-        </div>
+<!--        </div>-->
       </el-col>
       <!--      <el-col :span="6">-->
       <!--        c-->
@@ -30,6 +31,9 @@ export default {
   name: "First",
   components: {
     Sudoku
+  },
+  mounted() {
+
   }
 }
 </script>

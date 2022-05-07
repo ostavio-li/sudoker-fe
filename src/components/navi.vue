@@ -10,6 +10,7 @@
       <span style="margin-left: 2%;display: inline-block">
 
         <el-menu
+            v-if="!small"
             :default-active="$route.path"
             class="nav-link"
             mode="horizontal"
@@ -51,7 +52,7 @@
 
             </el-dropdown>
           </form>
-        <el-button v-if="!hasLogin" type="success" plain size="small" @click="this.$router.push('login')">登录</el-button>
+        <el-button v-if="!hasLogin" type="success" plain size="small" @click="router.push('login')">登录</el-button>
       </span>
 
     </span>
@@ -74,7 +75,8 @@ export default {
       activeIndex: '1',
       // 是否登录
       // 是否是管理员
-      isAdmin: false
+      isAdmin: false,
+      small: window.innerWidth < 730
     }
   },
   computed: {
@@ -84,15 +86,20 @@ export default {
   },
   methods: {
     toAdmin() {
-      router.push('/adm/user')
+      // router.push('/adm/user')
     },
     logout() {
       localStorage.removeItem("Authorization")
       this.$store.commit('logout')
       this.$router.go(0)
+    },
+    toggleSmall(e) {
+      this.small = window.innerWidth < 730
     }
   },
   mounted() {
+    window.addEventListener("resize", this.toggleSmall)
+
     if (localStorage.getItem('Authorization') != null) {
       this.$store.commit('login')
     }
