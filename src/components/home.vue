@@ -101,10 +101,7 @@ html, body {
   width: 100%;
 }
 
-.sudoku-box {
-  /*border: #888888 solid 2px;*/
-  /*border-radius: 20px;*/
-}
+
 
 
 .el-card {

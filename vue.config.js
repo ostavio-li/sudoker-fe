@@ -4,6 +4,8 @@ const CompressionPlugin = require('compression-webpack-plugin')
 // Config
 const conf = {
 
+    publicPath: '/',
+
     // 保存时 lint
     lintOnSave: false,
 
@@ -18,6 +20,13 @@ const conf = {
                 target: 'http://localhost:8050',
                 secure: false
             }
+        }
+    },
+
+    configureWebpack: {
+        externals: {
+            vue: 'Vue',
+            echarts: 'echarts'
         }
     },
 

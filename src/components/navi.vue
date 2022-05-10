@@ -86,7 +86,7 @@ export default {
   },
   methods: {
     toAdmin() {
-      // router.push('/adm/user')
+      router.push('/adm/user')
     },
     logout() {
       localStorage.removeItem("Authorization")

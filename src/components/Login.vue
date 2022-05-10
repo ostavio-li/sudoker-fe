@@ -18,6 +18,22 @@
 
 
         </div>
+
+        <div>
+
+<!--          <drag-verify-->
+<!--              ref="dragVerify"-->
+<!--              v-model:isPassing="isPassing2"-->
+<!--              text="请按住滑块拖动"-->
+<!--              successText="验证通过"-->
+<!--              handlerIcon=DArrowRight-->
+<!--              successIcon="el-icon-circle-check"-->
+<!--          >-->
+<!--          </drag-verify>-->
+<!--          <VerifySlider></VerifySlider>-->
+
+        </div>
+
         <!--        <div>-->
         <!--          <el-input style="margin: 5px;width: 65%;" disabled placeholder="验证码" v-model="user.captcha"/>-->
         <!--          <el-button style="width: 30%;margin-left: 2%;" disabled @click="getCaptcha">{{ captcha }}</el-button>-->
@@ -44,6 +60,8 @@ import {Avatar, Lock} from "@element-plus/icons-vue";
 <script>
 import {ElMessage, ElMessageBox} from "element-plus";
 import client from "@/api/client";
+// import dragVerify from "@/components/dragVerify";
+// import { VerifySlider } from 'vue-verify-slider'
 
 export default {
   name: "Login",
@@ -62,6 +80,9 @@ export default {
     canLogin: function () {
       return this.user.username.length > 0 && this.user.password.length > 0
     }
+  },
+  components: {
+    // VerifySlider
   },
   mounted() {
     if (this.$store.state.loggedin) {

@@ -3,25 +3,25 @@
   <div id="p" @touchmove.prevent>
 
     <div style="width: 100%;margin: 0 auto;line-height: 50px">
-      <span style="float: left;line-height: 50px">
+
+
+      <el-button type="primary" style="float: left;margin: 5px auto;" class="button-shadow" @click="go">{{ status }}</el-button>
+      <span style="line-height: 50px;font-weight: bold;font-size: 35px">{{ timer }}</span>
+      <span style="float: right;line-height: 50px">
         <el-button
             class="button-shadow"
             type="success"
             title="提交"
-            :icon="Check"
             @click="check"
-            circle>
+            >提交
 
         </el-button>
 
       </span>&nbsp;
-
-      <el-button type="primary" style="margin: 5px auto;" class="button-shadow" @click="go">{{ status }}</el-button>
-      <span style="float: right;line-height: 50px;font-weight: bold;font-size: larger">{{ timer }}</span>
     </div>
 
-    <div>
-      <table style="width: 100%">
+    <div style="margin-top: 10px">
+      <table style="margin: 0 auto">
         <tr v-for="(row, ri) in data" key="row"
             :class="(ri === 2 || ri === 5 || ri === 8) ? 'edge-line' : (ri === 0 || ri === 3 || ri === 6) ? 'edge-top' : ''">
           <td
@@ -352,7 +352,7 @@ export default {
 /*}*/
 
 td {
-  /*width: 30px;*/
+  /*width: 40px;*/
   padding: 0;
 }
 
@@ -365,7 +365,8 @@ td {
   border: none;
   outline: none;
   /*width: 60px;*/
-  width: 100%;
+  /*width: 100%;*/
+  width: 40px;
   height: 40px;
   line-height: 60px;
   font-size: 25px;

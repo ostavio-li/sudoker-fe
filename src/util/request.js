@@ -25,6 +25,13 @@ request.interceptors.request.use(
 
 request.interceptors.response.use(
     response => {
+        if (response.data.code == null) {
+            ElMessage.warning('服务器错误')
+        } else {
+            if (response.data.code !== '200') {
+                ElMessage.warning(response.data.message)
+            }
+        }
         return response
     }, error => {
         ElMessage.warning('服务器错误')

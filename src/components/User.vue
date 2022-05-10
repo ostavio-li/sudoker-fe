@@ -12,7 +12,7 @@
 
   <el-row :gutter="0" style="margin-top: 10px;height: 300px">
     <el-col :span="7">
-      <el-card id="main" style="height: 100%">
+      <el-card id="main" style="height: 100%;text-align: center;width: 100%">
 
       </el-card>
     </el-col>
@@ -38,6 +38,8 @@
 <script>
 // import request from "../api/client.js";
 import * as echarts from 'echarts'
+// import * as echarts from 'echarts/core'
+// import { BarChart } from 'echarts/charts'
 
 export default {
   name: "User",
@@ -52,7 +54,8 @@ export default {
     // request.list().then(resp => {
     //   this.compaany = resp.data.data
     // })
-    var chart = echarts.init(document.getElementById('main'));
+
+    var barChart = echarts.init(document.getElementById('main'));
     const option = {
       xAxis: {
         type: 'category',
@@ -66,9 +69,16 @@ export default {
           data: [120, 190, 150, 80, 70, 110, 130],
           type: 'bar'
         }
-      ]
+      ],
+      grid: {
+        left: '12%',
+        right: '10%'
+      }
     };
-    chart.setOption(option)
+    barChart.setOption(option)
+    window.onresize = function () {
+      barChart.resize()
+    }
   }
 
 }
