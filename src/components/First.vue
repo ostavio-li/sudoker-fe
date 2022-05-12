@@ -2,7 +2,7 @@
   <div style="width: 100%;margin: 0 auto;text-align: center;padding-top: 20px">
 
     <vuetyped
-        :strings="['Sudoker']"
+        :strings="['数独客', 'Sudoker']"
         :loop="false"
         :smart-backspace="true"
         :cursorChar="'_'"
