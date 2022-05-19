@@ -2,9 +2,11 @@
 
   <!-- 教程页面 -->
 
-  <div>
-    这是教程页面
-  </div>
+  <el-row :gutter="0">
+    <el-col :span="24" style="text-align: center;">
+      这是教程页面
+    </el-col>
+  </el-row>
 
 </template>
 
