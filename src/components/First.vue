@@ -1,5 +1,7 @@
 <template>
-  <div style="width: 100%;margin: 0 auto;text-align: center;padding-top: 20px">
+
+  <transition name="el-fade-in">
+  <div v-show="show" style="width: 100%;margin: 0 auto;text-align: center;padding-top: 20px">
 
     <vuetyped
         :strings="['数独客', 'Sudoker']"
@@ -21,7 +23,6 @@
 <!--         这里是数独组件，目前无法响应窗口缩放-->
         <div style="margin: 0 auto;" class="sudoku-box">
           <el-card style="height: 100%;width: 100%">
-<!--            <div style="text-align: left">每日一题</div>-->
             <Sudoku class="su" @finish="put"/>
           </el-card>
 
@@ -34,6 +35,8 @@
 
 
   </div>
+
+  </transition>
 </template>
 
 <script>
@@ -46,8 +49,13 @@ export default {
     Sudoku,
     vuetyped
   },
+  data() {
+    return {
+      show: false
+    }
+  },
   mounted() {
-
+    this.show = true
   }
 }
 </script>
@@ -67,6 +75,12 @@ export default {
   /*border: #888888 solid 2px;*/
   /*border-radius: 20px;*/
   width: 450px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 </style>

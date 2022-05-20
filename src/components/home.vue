@@ -4,10 +4,10 @@
   <Navi class="h"/>
 
   <!-- Gitee 挂件 -->
-<!--  <a href='https://gitee.com/carlos_li/sudoker-fe' target="_blank" title="Fork me on Gitee"-->
-<!--     style="position: fixed;z-index: 1;right: 1%">-->
-<!--    <img src='https://gitee.com/carlos_li/sudoker-fe/widgets/widget_5.svg' alt='Fork me on Gitee'/>-->
-<!--  </a>-->
+  <a href='https://gitee.com/carlos_li/sudoker-fe' target="_blank" title="Fork me on Gitee"
+     style="position: fixed;z-index: 1;right: 1%">
+    <img src='https://gitee.com/carlos_li/new-sudoker-fe/widgets/widget_5.svg' alt='Fork me on Gitee'/>
+  </a>
 
   <!-- 占位 -->
   <div style="height: 60px;"/>
@@ -108,11 +108,7 @@ html, body {
 
 }
 
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 
 .text {
   font-size: 14px;

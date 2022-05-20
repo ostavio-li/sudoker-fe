@@ -3,8 +3,8 @@
   <div class="nav">
     <span style="margin: 0 auto;width: 90%;line-height: 60px">
 <!--      <img id="icon" alt="数独客" src="sudoku.png"/>-->
-      <img src="logo.svg" alt="数独客" title="数独客" style="line-height: 60px; margin-bottom: 2px" width="40" height="40" />
-      <strong style="font-size: larger;margin-left: 10px">Sudoker</strong>
+      <img src="logo.svg" alt="数独客" title="数独客" style="line-height: 60px; margin-bottom: 2px; cursor: pointer" @click="router.push('/')" width="40" height="40" />
+      <strong style="font-size: larger;margin-left: 10px; cursor: pointer" @click="router.push('/')">Sudoker</strong>
 
       <!-- 导航链接 -->
       <span style="margin-left: 2%;display: inline-block">
@@ -41,6 +41,7 @@
                   <div style="margin: 10% 10%;font-family: 微软雅黑, sans-serif;font-size: medium">{{ user }}</div>
                   <el-divider content-position="center" ></el-divider>
                   <el-dropdown-item :icon="Help" style="user-select: none;">帮助中心</el-dropdown-item>
+                  <el-dropdown-item :icon="Check" style="user-select: none;">工单中心</el-dropdown-item>
                   <el-dropdown-item
                       :icon="Close"
                       style="color: red;user-select: none;"
@@ -61,7 +62,7 @@
 </template>
 
 <script setup>
-import {Help, Close} from "@element-plus/icons-vue";
+import {Help, Close, Check} from "@element-plus/icons-vue";
 </script>
 
 <script>

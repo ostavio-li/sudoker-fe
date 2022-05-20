@@ -34,7 +34,12 @@ request.interceptors.response.use(
         }
         return response
     }, error => {
-        ElMessage.warning('服务器错误')
+        ElMessage({
+            message: '服务器错误',
+            showClose: true,
+            type: 'warning',
+            duration: 1500
+        })
         return Promise.reject(error)
     }
 )
